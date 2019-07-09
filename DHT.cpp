@@ -34,7 +34,7 @@ void DHT::begin(void) {
 //boolean S == Scale.  True == Fahrenheit; False == Celcius
 float DHT::readTemperature(bool S, bool force) {
   float f = NAN;
-
+  int i=0;
   if (read(force)) {
     switch (_type) {
     case DHT11:
@@ -55,6 +55,7 @@ float DHT::readTemperature(bool S, bool force) {
       if(S) {
         f = convertCtoF(f);
       }
+      int j=0;
       break;
     }
   }
